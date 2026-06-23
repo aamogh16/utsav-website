@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const navLinks = [
   { href: '#about', label: 'About' },
@@ -31,10 +32,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo / wordmark */}
         <a href="#" className="flex items-center gap-2.5 group">
-          {/* Placeholder logo circle */}
-          <div className="w-8 h-8 rounded-full bg-saffron/20 border border-saffron/40 flex items-center justify-center shrink-0">
-            <span className="font-condensed font-black text-cream text-xs leading-none">U</span>
-          </div>
+          <Image src="/logo.png" alt="Utsav" width={36} height={36} className="shrink-0" />
           <span className="font-condensed font-bold text-cream text-lg tracking-widest uppercase">
             Utsav
           </span>
