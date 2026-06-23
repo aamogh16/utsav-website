@@ -29,10 +29,10 @@ export default function Navbar() {
         scrolled || menuOpen ? 'bg-charcoal/96 backdrop-blur-sm' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo / wordmark */}
         <a href="#" className="flex items-center gap-2.5 group">
-          <Image src="/logo.png" alt="Utsav" width={36} height={36} className="shrink-0" />
+          <Image src="/logo.png" alt="Utsav" width={44} height={44} className="shrink-0 mix-blend-screen" />
           <span className="font-condensed font-bold text-cream text-lg tracking-widest uppercase">
             Utsav
           </span>
