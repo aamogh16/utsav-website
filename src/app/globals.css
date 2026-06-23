@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #F6F0E4;
+  --color-cream-muted: #EDE5D4;
+  --color-charcoal: #16120E;
+  --color-saffron: #E07B1A;
+  --color-crimson: #992218;
+  --color-warm-gray: #9C8970;
+}
+
+@theme inline {
+  --font-display: var(--font-playfair), serif;
+  --font-condensed: var(--font-barlow), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F6F0E4;
+  color: #16120E;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Grain texture overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

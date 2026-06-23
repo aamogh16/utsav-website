@@ -1,0 +1,15 @@
+export const affiliates = [
+  'Nakhraas',
+  'Malhaar',
+  'Rangila',
+  'Junoon',
+  'NEBC',
+  'Naad',
+  'Aaroh',
+  'HUSO',
+  'ICA',
+  'SISA',
+  'SAIV',
+  'PakSA',
+  'Bondhus',
+];
