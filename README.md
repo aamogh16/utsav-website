@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NU Utsav — Website
+
+Marketing site for **Utsav**, Northeastern University's undergraduate South Asian
+cultural organization — celebrating the cultures of India, Pakistan, Bangladesh,
+Bhutan, Sri Lanka, and Nepal.
+
+Built with **Next.js 16** (App Router), **React 19**, and **Tailwind CSS v4**.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). A floating **version switcher**
+at the bottom of every page lets you jump between the design mocks below.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Design mocks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The homepage design is still being explored, so several full-page mockups live at
+their own routes. All of them pull from the same content in `src/data/`.
 
-## Learn More
+| Route | Name | Vibe |
+| ----- | ---- | ---- |
+| `/`   | Editorial      | The original warm, magazine-style dark hero. |
+| `/v2` | Festival Poster | Bold/brutalist — thick borders, giant condensed type, marquees, high-contrast saffron/crimson. |
+| `/v3` | Editorial Minimal | Airy and serif-forward, hairline rules, programme-style event list. |
+| `/v4` | Modern | Dark gradient + glassmorphism, glowing orbs, gradient initials avatars. |
+| `/v5` | Six Nations | Poster style — full-bleed color bands, one per country. |
+| `/v6` | Passport | Cultural-passport theme — MRZ cover strip and "entry stamp" cards. |
+| `/v7` | Festival Bill | Countries billed like a music-festival lineup, with a greetings marquee. |
+| `/v8` | Bold Grid | Swiss-brutalist modular grid; the six nations as a tiled color grid. |
 
-To learn more about Next.js, take a look at the following resources:
+`/v5`–`/v8` lean into the **festival-poster** direction and weave in the six nations
+via flags, flag-derived accent colors, and native greetings.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/
+│   ├── layout.tsx        # Root layout — fonts (Playfair, Barlow Condensed, Inter) + metadata
+│   ├── globals.css       # Tailwind theme tokens + shared animations (marquee, orbs, gradient)
+│   ├── page.tsx          # V1 homepage
+│   └── v2 … v8/page.tsx  # Design mocks
+├── components/
+│   ├── Navbar / Hero / About / Calendar / Gallery / Team / Join / Footer.tsx  # V1 sections
+│   └── VersionSwitcher.tsx   # Floating mock-to-mock navigation
+└── data/
+    ├── events.ts         # Flagship + ongoing events
+    ├── team.ts           # 2025–26 executive board
+    ├── affiliates.ts     # Affiliated student orgs
+    └── countries.ts      # The six nations: flag, accent color, native greeting
+```
 
-## Deploy on Vercel
+### Design tokens
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Colors and fonts are defined in `src/app/globals.css`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Colors:** `cream`, `cream-muted`, `charcoal`, `saffron`, `crimson`, `warm-gray`
+- **Fonts:** `font-display` (Playfair Display), `font-condensed` (Barlow Condensed), `font-body` (Inter)
+
+## Notes
+
+These are mockups: image areas are still placeholders and most CTAs link to `#`.
+
+## Scripts
+
+```bash
+npm run dev     # start the dev server
+npm run build   # production build
+npm run start   # serve the production build
+npm run lint    # eslint
+```

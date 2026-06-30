@@ -46,3 +46,36 @@ body::after {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* ---- Animations used by the mock variants (/v2, /v3, /v4) ---- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-slow {
+  animation: marquee 50s linear infinite;
+}
+
+@keyframes float-orb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(2rem, -1.5rem) scale(1.08); }
+}
+
+.animate-float-orb {
+  animation: float-orb 14s ease-in-out infinite;
+}
+
+@keyframes gradient-pan {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient-pan {
+  background-size: 200% 200%;
+  animation: gradient-pan 8s ease infinite;
+}
